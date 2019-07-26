@@ -20,11 +20,29 @@ class UsersListViewController: UIViewController {
             usersTableView.register(userCellNib, forCellReuseIdentifier: "userCell")
         }
     }
-    var userList: [User] = UserStorage.sharedStorage.allUser() {
+
+    var userListViewModel = UsersListViewModel!
+    
+    var keysCharArray: [Character]!
+    
+//    var dictUsers: [Character : [User]] = UserStorage.sharedStorage.getDictionary() {
+//        didSet {
+////            initializeArrays()
+//            DispatchQueue.main.async {
+//                self.usersTableView?.reloadData()
+//            }
+//        }
+//    }
+    
+    var allUsersList: [User] = UserStorage.sharedStorage.allSortedUsers() {
         didSet {
-            usersTableView?.reloadData()
+//            initializeArrays()
+            DispatchQueue.main.async {
+                self.usersTableView?.reloadData()
+            }
         }
     }
+    
     weak var delegate: UsersListViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -32,27 +50,42 @@ class UsersListViewController: UIViewController {
         usersTableView?.dataSource = self
         usersTableView?.delegate = self
     }
+    
+//    private func initializeArrays() {
+//        keysCharArray = Array(dictUsers.keys)
+//        print(keysCharArray)
+//    }
 
 }
 
 extension UsersListViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let user = userList[indexPath.row]
-        delegate?.usersListViewControllerDidSelectUser(user)
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let user = dictUsers[indexPath.row]
+//        delegate?.usersListViewControllerDidSelectUser(user)
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
     
 }
 
 extension UsersListViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return allUsersList.count
+    }
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "\(keysCharArray[section])"
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userList.count
+        //let seila = dictUsers[]
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserTableViewCell
-        let user = userList[indexPath.row]
+        let user = allUsersList[indexPath.row]
         cell.textLabel?.text = user.name.first
         cell.detailTextLabel?.text = user.name.last
         return cell

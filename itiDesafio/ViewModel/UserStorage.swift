@@ -14,16 +14,29 @@ class UserStorage {
     static let usersURL = Bundle.main.url(forResource: "randomContacts", withExtension: "json")!
     
     private let allUsersJson: [User]
+    private let sortedUsers: [User]
     
     init() {
         let data = try! Data(contentsOf: UserStorage.usersURL)
         let allUsers = try! JSONDecoder().decode([User].self, from: data)
         
         allUsersJson = allUsers
+        sortedUsers = allUsers.sorted(by: {$0.name.first < $1.name.first})
     }
     
-    func allUser() -> [User] {
-        return allUsersJson
+    func allSortedUsers() -> [User] {
+        return sortedUsers
     }
+    
+//    func getDictionary() -> [Character : [User]] {
+//        let groupedUsers = Dictionary(grouping: sortedUsers, by: getFirstChar)
+//        return groupedUsers
+//    }
+//    
+//    private func getFirstChar(_ aDict: User) -> Character {
+//        return aDict.name.first.uppercased().first ?? "0"
+//    }
+    
+    
     
 }

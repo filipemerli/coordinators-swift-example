@@ -15,6 +15,7 @@
 		7D18A94222EA2EBD006E5AD9 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D18A94122EA2EBD006E5AD9 /* UserDetailViewController.xib */; };
 		7D18A94622EA3428006E5AD9 /* UsersListVCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D18A94522EA3428006E5AD9 /* UsersListVCTableViewCell.xib */; };
 		7D18A94822EA354A006E5AD9 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18A94722EA354A006E5AD9 /* UserTableViewCell.swift */; };
+		7D18A94D22EB8B2C006E5AD9 /* UsersListVCModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18A94C22EB8B2C006E5AD9 /* UsersListVCModelView.swift */; };
 		7D4AC22A22E5FE10001F174B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4AC22922E5FE10001F174B /* AppDelegate.swift */; };
 		7D4AC23122E5FE12001F174B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4AC23022E5FE12001F174B /* Assets.xcassets */; };
 		7D4AC23422E5FE12001F174B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4AC23222E5FE12001F174B /* LaunchScreen.storyboard */; };
@@ -35,6 +36,7 @@
 		7D18A94122EA2EBD006E5AD9 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		7D18A94522EA3428006E5AD9 /* UsersListVCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersListVCTableViewCell.xib; sourceTree = "<group>"; };
 		7D18A94722EA354A006E5AD9 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		7D18A94C22EB8B2C006E5AD9 /* UsersListVCModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListVCModelView.swift; sourceTree = "<group>"; };
 		7D4AC22622E5FE10001F174B /* itiDesafio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = itiDesafio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4AC22922E5FE10001F174B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D4AC23022E5FE12001F174B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		7D18A94922EA3989006E5AD9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7D18A8DE22E768CE006E5AD9 /* UserStorage.swift */,
+				7D18A94C22EB8B2C006E5AD9 /* UsersListVCModelView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -121,7 +125,6 @@
 			children = (
 				7D4AC23D22E60206001F174B /* User.swift */,
 				7D4AC24222E607DC001F174B /* FullName.swift */,
-				7D18A8DE22E768CE006E5AD9 /* UserStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				7D18A8DF22E768CE006E5AD9 /* UserStorage.swift in Sources */,
 				7D4AC25622E652D6001F174B /* AllUsersCoordinator.swift in Sources */,
 				7D4AC24E22E64BFC001F174B /* Coordinator.swift in Sources */,
+				7D18A94D22EB8B2C006E5AD9 /* UsersListVCModelView.swift in Sources */,
 				7D18A8EF22E775C1006E5AD9 /* UsersListViewController.swift in Sources */,
 				7D4AC22A22E5FE10001F174B /* AppDelegate.swift in Sources */,
 				7D4AC23E22E60206001F174B /* User.swift in Sources */,

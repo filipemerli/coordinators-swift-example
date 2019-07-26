@@ -18,7 +18,7 @@ class ApplicationCoord: Coordinator {
         self.window = window
         userStorage = UserStorage()
         rootViewController = UINavigationController()
-        rootViewController.navigationBar.prefersLargeTitles = true
+        rootViewController.navigationBar.prefersLargeTitles = false
         
         allUserListCoordinator = AllUsersCoordinator(presenter: rootViewController, userStorage: userStorage)
     }

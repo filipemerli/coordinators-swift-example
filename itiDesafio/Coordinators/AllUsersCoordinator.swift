@@ -19,14 +19,14 @@ class AllUsersCoordinator: Coordinator {
     init(presenter: UINavigationController, userStorage: UserStorage) {
         self.presenter = presenter
         self.userStorage = userStorage
-        allUsersList = userStorage.allUser()
+        allUsersList = userStorage.allSortedUsers()
     }
     
     func start() {
         let userListViewController = UsersListViewController(nibName: nil, bundle: nil)
         userListViewController.delegate = self
-        userListViewController.title = "User list"
-        userListViewController.userList = allUsersList
+        userListViewController.title = "Transferências"
+        userListViewController.allUsersList = allUsersList
         presenter.pushViewController(userListViewController, animated: true)
         self.userListViewController = userListViewController
     }
